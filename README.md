@@ -19,4 +19,19 @@ This project analyzes customer purchase behabior to understand retention pattern
 ## Key Findings
 - Nearly 25% of transactions had missing customer identifiers, confirming the need for careful filtering before customer-level analysis.
 - Cancellations were cleanly identifiable via the InvoiceNo prefix, avoiding reliance on negative Quantity alone.
-  
+
+## Week 2 Summary - Cohort Retention Matrix
+- Loaded the cleaned dataset (392,732 rows) from week 1
+- Calculated CohortIndex (number of months between each transaction and the customer's first purchase)
+- Grouped customers by CohortMonth and CohortIndex to count unique active customers per month
+- Built a cohort matrix using pivot_table (absolute retained customer counts)
+- Converted the matrix into percentages to build the retention matrix
+- Bonus: Added an average retention curve, a retention heatmap, and a best vs worst cohort comparison chart
+
+ ## Key Findings
+  - Retention drops sharply from Month 0(100%) to Month 1(~20-37%) across nearly every cohort - most customers do not return after their first purchase.
+  - The December 2010 cohort showed the strongest retention, consistently staying between 30-40% across most months.
+  - The March 2011 cohort showed weaker retention by comparison, mostly staying in the 15-25% range.
+  - Customers who survive past Month 1 tend to remain fairly steady long-term customers rather than continuing to drop off.
+  - Recent cohorts (Oct-Dec 2011) have limited data and should be interpreted cautiously due to small sample sizes.
+    
